@@ -12,8 +12,8 @@ describe('options', () => {
             background: svg-inline(icon);
             `,
             `
-            background: url("data:image/svg+xml;charset=utf-8,<svg id='basic'/>");
-            background: url("data:image/svg+xml;charset=utf-8,<svg id='basic'/>");
+            background: url("data:image/svg+xml,<svg id='basic'/>");
+            background: url("data:image/svg+xml,<svg id='basic'/>");
             `,
             {
                 encode: false,
@@ -30,8 +30,8 @@ describe('options', () => {
             background: svg-inline(icon);
             `,
             `
-            background: url("data:image/svg+xml;charset=utf-8,<svg id='basic'/>");
-            background: url("data:image/svg+xml;charset=utf-8,<svg id='basic'/>");
+            background: url("data:image/svg+xml,<svg id='basic'/>");
+            background: url("data:image/svg+xml,<svg id='basic'/>");
             `,
             {
                 encode: false,
@@ -48,8 +48,8 @@ describe('options', () => {
             background: svg-inline(icon);
             `,
             `
-            background: url("data:image/svg+xml;charset=utf-8,<svg id='basic'/>");
-            background: url("data:image/svg+xml;charset=utf-8,<svg id='basic'/>");
+            background: url("data:image/svg+xml,<svg id='basic'/>");
+            background: url("data:image/svg+xml,<svg id='basic'/>");
             `,
             {
                 encode: false,
@@ -90,8 +90,8 @@ describe('options', () => {
             background: svg-inline(icon);
             `,
             `
-            background: url("data:image/svg+xml;charset=utf-8,%3Csvg id='basic'/%3E");
-            background: url("data:image/svg+xml;charset=utf-8,%3Csvg id='basic'/%3E");
+            background: url("data:image/svg+xml,%3Csvg id='basic'/%3E");
+            background: url("data:image/svg+xml,%3Csvg id='basic'/%3E");
             `,
             {}
         );
@@ -105,8 +105,8 @@ describe('options', () => {
             background: svg-inline(icon);
             `,
             `
-            background: url("data:image/svg+xml;charset=utf-8,1234567890");
-            background: url("data:image/svg+xml;charset=utf-8,1234567890");
+            background: url("data:image/svg+xml,1234567890");
+            background: url("data:image/svg+xml,1234567890");
             `,
             {
                 encode(code) {
@@ -135,7 +135,7 @@ describe('options', () => {
     it('should remove fill attributes with removeFill: true', () => {
         return compare(
             `background: svg-load('fixtures/fill.svg', fill="#fff");`,
-            `background: url("data:image/svg+xml;charset=utf-8,<svg fill='#fff'> <path/> </svg>");`,
+            `background: url("data:image/svg+xml,<svg fill='#fff'> <path/> </svg>");`,
             {
                 removeFill: true,
                 encode: false
@@ -150,8 +150,8 @@ describe('options', () => {
             background: svg-load('fixtures/fill-icon.svg', fill="#fff");
             `,
             `
-            background: url("data:image/svg+xml;charset=utf-8,<svg fill='#fff'> <path fill='#000'/> </svg>");
-            background: url("data:image/svg+xml;charset=utf-8,<svg fill='#fff'> <rect/> </svg>");
+            background: url("data:image/svg+xml,<svg fill='#fff'> <path fill='#000'/> </svg>");
+            background: url("data:image/svg+xml,<svg fill='#fff'> <rect/> </svg>");
             `,
             {
                 removeFill: /-icon/,
